@@ -26,10 +26,10 @@ namespace YoutubeSearchApi.Net.Services
             throw new NotImplementedException();
         }
 
-        public async Task<YoutubeSearchResult> SearchAsync(string query, int retry = 3)
+        public async Task<YoutubeSearchResult> SearchAsync(string query, int retry = 3, bool search_only_streams = false)
         {
             string encodedKeywords = HttpUtility.UrlEncode(query);
-            string searchUrl = $"{BASE_URL}{encodedKeywords}";
+            string searchUrl = $"{BASE_URL}{(search_only_streams ? encodedKeywords + "&sp=EgJAAQ%253D%253D": encodedKeywords)}";
 
             string pageContent = "";
             bool foundFeatureFlag = false;

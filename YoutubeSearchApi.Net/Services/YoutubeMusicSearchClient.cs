@@ -32,7 +32,7 @@ namespace YoutubeSearchApi.Net.Services
             throw new System.NotImplementedException();
         }
 
-        public async Task<YoutubeSearchResult> SearchAsync(string query, int retry = 3)
+        public async Task<YoutubeSearchResult> SearchAsync(string query, int retry = 3, bool nevermind = false)
         {
             query = HttpUtility.UrlEncode(query);
 

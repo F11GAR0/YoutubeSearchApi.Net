@@ -21,7 +21,7 @@ namespace YoutubeSearchApi.Net.Services
             throw new System.NotImplementedException();
         }
 
-        public async Task<GoogleSearchResult> SearchAsync(string query, int retry = 3)
+        public async Task<GoogleSearchResult> SearchAsync(string query, int retry = 3, bool nevermind = false)
         {
             var parameters = new Dictionary<string, object>
             {
